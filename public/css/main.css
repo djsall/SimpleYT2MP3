@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+.pad {
+	margin-top: 35vh;
+}
+.URL-input, .start {
+	margin-bottom: 2.5vh;
+	font-size:1.3em;
+	padding:5px 10px;
+}
+.URL-input {
+	border-radius:4px 0px 0px 4px;
+	width:64vh;
+	text-align: left;
+	border:2px solid #EEEEEE;
+	background: #EEEEEE;
+	outline:none;
+}
+.URL-input:focus, .URL-input:hover {
+	border:2px solid #0485ff;
+}
+.start {
+	border-radius:0px 4px 4px 0px;
+	border:2px solid #0485ff;
+	background: #0485ff;
+	color:white;
+	width: 8vh;
+}
+.start:hover {
+	background: rgba(0, 162, 255, 0.8);
+	border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.hidden {
+	display: none;
+}
+.dark {
+	background: #333;
+}
+.center {
+	text-align: center;
+}
+.red {
+	color: rgb(255, 6, 6);
+}
+.green {
+	color: rgb(6, 255, 6);
+}
+.title {
+	color: #fff;
+	padding-bottom: 1vh;
+	font-size: 3.6vh;
+}
+#messages {
+	font-size: 2vh;
+}

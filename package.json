@@ -1,0 +1,23 @@
+{
+  "name": "ytdl",
+  "version": "1.0.0",
+  "description": "Youtube downloader in node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Youtube",
+    "download",
+    "ytdl",
+    "youtube-dl"
+  ],
+  "author": "DjSall",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^0.29.2"
+  }
+}
