@@ -1,41 +1,57 @@
+(()=>{
+
 let convertBtn = document.getElementById("dl");
 let URLinput = document.getElementById("URL-input");
+
+const domain = "localhost:3000"
 
 let body = document.body.classList;
 let messages = document.getElementById("messages");
 
 convertBtn.addEventListener("click", () =>{
-		sendURL(URLinput.value);
+	sendURL(URLinput.value);
 });
-function fetchDl(URL){
-	window.location.href = "http://localhost:3000/dl?URL="+URL;
-}
-function sendURL(URL){
-	if(URL == "" || URL == undefined){
+async function sendURL(dlURL){
+	if(dlURL == "" || dlURL == undefined){
 		messageString("The URL field shouldn't be empty!", "red");
 	}else {
-		messageString("Download started...", "green");
-		fetch("http://localhost:3000/fetch?URL="+URL);
-		timer();
-	}
-}
-function timer(){
-	var sec = 9;
-	var timer = setInterval(function(){
-			convertBtn.innerHTML='00:0'+sec;
-			sec--;
-			if (sec < 0) {
-					clearInterval(timer);
-					convertBtn.innerHTML = "Start";
-					fetchDl(URLinput.value);
+		let assembledURL = "http://" + domain + "/dlytvid?URL="+dlURL;
+		let fileURL = "http://" + domain + "/recytvid?URL="+dlURL;
+		messageString("Download in progress...", "green");
+		fetch(assembledURL)
+		.then((response)=>{
+			return response.json();
+		})
+		.then((myJson)=>{
+			if(myJson.Status == "Ready"){
+				window.location.href = fileURL;
+				messageString("Download completed.", "green");
+				timer(2);
 			}
-	}, 1000);
+		});
+	}
 }
 function messageString(string, color){
 	messages.innerHTML = string;
-	if(color != "-red"){
+	if(color != "-"){
 		messages.classList.add(color);
 	}else {
 		messages.classList.remove("red");
+		messages.classList.remove("green");
 	}
 }
+function timerDoOnExpire(){
+	messageString("", "-");
+	URLinput.value = "";
+}
+function timer(sec){
+	let timeLeft = sec;
+	let countDown = setInterval(()=>{
+		timeLeft--;
+		if(timeLeft <= 0){
+			timerDoOnExpire();
+			clearInterval(countDown);
+		}
+	}, 1000);
+}
+})();

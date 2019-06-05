@@ -10,11 +10,18 @@
 <body class="dark">
 	<div class="pad"></div>
 	<div class="center">
-		<h1 class="title">Simple Youtube Downloader</h1>
+		<h1 class="title">Simple Youtube to MP3 Converter</h1>
 		<input placeholder="Video URL" class="URL-input" id="URL-input">
 		<button class="start" id="dl">Start</button>
+		<p>This tool creates a 320kbps CBR MP3 file from the target video.</p>
 		<div id="messages"></div>
+	</div>
+	<div class="bot">
+		<p><h3 class="disclaimer">Disclaimer:</h3> Only use this converter at your own risk.</p>
+		<p>It is against Youtube's ToS to download copyrighted content from their website.</p>
+		<p>I am not taking any legal responsibility for anyone using this converter.</p>
 	</div>
 </body>
 </html>
 <script src="js/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
