@@ -5,7 +5,7 @@ const ytdl 				= require('ytdl-core');
 const ffmpeg 			= require('fluent-ffmpeg');
 const cors 				= require('cors');
 
-const downloadPath = "C:/Users/DjSall/Documents/Code/js/ytdl/public/downloaded/"; //__dirname while deployed
+const downloadPath = __dirname;
 
 const app = express();
 
