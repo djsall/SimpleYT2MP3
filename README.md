@@ -22,12 +22,6 @@
 npm install
 ```
 
-## Run tests
-
-```sh
-npm run test
-```
-
 ## Author
 
 👤 **DjSall**
