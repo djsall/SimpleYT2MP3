@@ -23,7 +23,7 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "fluent-ffmpeg": "^2.1.2",
     "ytdl-core": "^0.29.2"
   }
